@@ -241,7 +241,7 @@ export default function App() {
           <h2 className="contact-title">Let's build something meaningful together</h2>
           <p className="contact-description">Whether you have a project in mind or are simply at the beginning of your journey, I welcome the conversation. Every great space starts with a question.</p>
           <div className="contact-info">
-            {[["Email", "scarlettraven@gmail.com"], ["Studio", "Southern Leyte, Philippines"], ["Phone", "+00 000 000 0000"]].map(([l, v]) => (
+            {[["Email", "scarlett.ravenatelier@gmail.com"], ["Studio", "Southern Leyte, Philippines"], ["Phone", "09126936662"]].map(([l, v]) => (
               <div key={l}>
                 <p className="contact-info-label">{l}</p>
                 <p className="contact-info-value">{v}</p>
