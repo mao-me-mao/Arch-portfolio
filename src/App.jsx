@@ -106,29 +106,14 @@ export default function App() {
 
   return (
     <div style={{ fontFamily: "'Georgia', serif", minHeight: "100vh" }}>
-      <style>{`
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        .filter-btn { font-family: 'Roboto', sans-serif; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 18px; border: 1px solid #C4B49A; background: transparent; color: #6B5B47; cursor: pointer; border-radius: 2px; transition: all 0.2s; }
-        .filter-btn.active, .filter-btn:hover { background: #2C2820; color: #F5F0E8; border-color: #2C2820; }
-
-        .proj-img { width: 100%; height: 260px; object-fit: cover; display: block; transition: transform 0.5s; }
-        .service-card { background: #EDE6D6; padding: 2rem; border-top: 2px solid #B5956A; }
-        input, textarea { width: 100%; font-family: 'Jost', sans-serif; font-size: 14px; padding: 12px 0; border: none; border-bottom: 1px solid #C4B49A; background: transparent; color: #2C2820; outline: none; transition: border-color 0.2s; }
-        input:focus, textarea:focus { border-color: #2C2820; }
-        textarea { resize: none; height: 100px; }
-        .submit-btn { font-family: 'Jost', sans-serif; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 40px; background: #2C2820; color: #F5F0E8; border: none; cursor: pointer; transition: background 0.2s; }
-        .submit-btn:hover { background: #B5956A; }
-        ::placeholder { color: #A8967E; }
-      `}</style>
 
       {/* NAV */}
       <nav className="navbar">
         <span className="navbar-brand" onClick={() => scrollTo("hero")}>Raven Atlier <em className="navbar-brand-em">Architect</em></span>
         <div className="navbar-links">
-          {["about", "services", "contact"].map(s => (
+          {["about", "services", "projects", "contact"].map(s => (
             <span key={s} className="nav-link" onClick={() => scrollTo(s)}>{s}</span>
           ))}
-            <span className="nav-link" onClick={() => navigate("/projects")}>Projects</span>
             <span className="nav-link" onClick={() => navigate("/shop")}>shop</span>
         </div>
       </nav>
