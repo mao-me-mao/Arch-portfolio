@@ -108,7 +108,7 @@ export default function App() {
     <div style={{ fontFamily: "'Georgia', serif", minHeight: "100vh" }}>
 
       {/* NAV */}
-      <nav className="navbar">
+      <nav className="navbar navbar-blur">
         <span className="navbar-brand" onClick={() => scrollTo("hero")}>Raven Atlier <em className="navbar-brand-em">Architect</em></span>
         <div className="navbar-links">
           {["about", "services", "projects", "contact"].map(s => (

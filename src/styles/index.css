@@ -10,15 +10,31 @@ body {
 }
 
 
+/* :root {
+  --accent:        #560b18;   buttons, borders, highlights 
+  --accent-hover:  #3d0810;  darker on hover
+  --accent-light:  #7a1524;  lighter variant if needed
+  --bg-primary:    #F5EFE6;  page background
+  --bg-card:       #EAE0CE;  cards, sections
+  --border:        #D6C9B0;  dividers, borders
+  --text-heading:  #1A1410;  headings
+  --text-body:     #56422E;  paragraphs
+  --text-muted:    #99816A;  labels, captions
+  --dark-bg:       #1A1410;  navbar, footer
+} */
+
 :root {
-  --accent:        #560b18;  /* buttons, borders, highlights */
-  --accent-hover:  #3d0810;  /* darker on hover */
-  --accent-light:  #7a1524;  /* lighter variant if needed */
-  --bg-primary:    #F5EFE6;  /* page background */
-  --bg-card:       #EAE0CE;  /* cards, sections */
-  --border:        #D6C9B0;  /* dividers, borders */
-  --text-heading:  #1A1410;  /* headings */
-  --text-body:     #56422E;  /* paragraphs */
-  --text-muted:    #99816A;  /* labels, captions */
-  --dark-bg:       #1A1410;  /* navbar, footer */
+  --primary: #560b18;
+  --primary-hover: #7a1024;
+
+  --background: #f1f0ed;
+  --card: #ffffff;
+  --border: #e2e0db;
+
+  --text-primary: #1f1f1f;
+  --text-secondary: #4a4a4a;
+  --text-muted: #7a7a7a;
+
+  --accent: #a63a4a;
+  --accent-alt: #c2a878; /* optional gold */
 }
