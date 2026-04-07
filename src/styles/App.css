@@ -45,9 +45,22 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #F5EFE6;
+  background: #f1f0ed;
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid #DDD5C0;
+  /* border-bottom: 1px solid #DDD5C0; */
+}
+
+.navbar-blur {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(241, 240, 237, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.06); */
 }
 
 .navbar-links {
@@ -58,28 +71,31 @@ ul, ol {
 .nav-link {
   cursor: pointer;
   font-family: 'Manrope', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #6B5B47;
   transition: color 0.2s;
+  border-bottom: 2px solid transparent;
 }
 
 .nav-link:hover {
-  color: #2C2820;
+  /* color: #2C2820; */
+  color: var(--primary-hover);
+  border-bottom-color: var(--primary-hover);
 }
 
 .navbar-brand {
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 900;
   letter-spacing: 0.06em;
   cursor: pointer;
 }
 
 .navbar-brand-em {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 15px;
   color: #8C7B68;
 }
@@ -91,6 +107,7 @@ ul, ol {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-top: 50px;
+  background-color: #f1f0ed;
 }
 
 .hero-text {
@@ -582,7 +599,7 @@ textarea {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 14px 40px;
-  background: #560b18;
+  background: var(--primary);
   color: #F5EFE6;
   border: none;
   cursor: pointer;
@@ -590,7 +607,7 @@ textarea {
 }
 
 .submit-btn:hover {
-  background: var(--accent-hover);
+  background: var(--primary-hover);
 }
 
 
