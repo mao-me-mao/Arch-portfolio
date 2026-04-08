@@ -64,22 +64,38 @@ const services = [
     icon: "◈",
     title: "Architectural Design",
     desc: "From initial concept to construction documentation — residential, commercial, and cultural projects with a rooted, site-specific approach.",
+    details: [
+      "Concept development and schematic design",
+      "Design development and documentation",
+      "Construction drawings and specifications",
+      "Permit and regulatory submissions",
+      "Site visits and construction administration",
+    ]
   },
   {
     icon: "◉",
     title: "Project Documentation",
-    desc: "From schematic drawings to as-built records — precise, complete documentation that bridges design intent and construction reality."
+    desc: "From schematic drawings to as-built records — precise, complete documentation that bridges design intent and construction reality.",
+    details: [
+      "As-built drawings and record documents",
+      "Shop drawing review",
+      "Material and finish schedules",
+      "Project manuals and specifications",
+      "Digital and physical file management",
+    ]
   },
   {
     icon: "◇",
     title: "Technical Drafting",
-    desc: "Precise technical drawings and blueprints that translate architectural concepts into clear, buildable construction documents."
+    desc: "Precise technical drawings and blueprints that translate architectural concepts into clear, buildable construction documents.",
+    details: [
+      "Floor plans, elevations and sections",
+      "Detailed construction drawings",
+      "Structural and MEP coordination",
+      "3D modeling and visualization",
+      "CAD and BIM drafting services",
+    ]
   },
-  // {
-  //   icon: "△",
-  //   title: "Masterplanning",
-  //   desc: "Large-scale site strategies that balance ecological sensitivity, community needs, and long-term resilience.",
-  // },
 ];
 
 const FILTERS = ["All", "Residential", "Commercial", "Cultural", "Adaptive Reuse", "Sacred"];
@@ -91,6 +107,7 @@ export default function App() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const heroRef = useRef(null);
+  const [selectedService, setSelectedService] = useState(null);
 
   const filtered = activeFilter === "All" ? projects : projects.filter(p => p.type === activeFilter);
 
@@ -157,7 +174,7 @@ export default function App() {
       {/* ABOUT */}
       <section id="about" className="about">
         <div style={{ position: "relative" }}>
-          <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=700&q=80" alt="Architect" className="about-image" />
+          <img src="cropped photo sis.jpg" alt="Architect" className="about-image" />
           {/* <div style={{ position: "absolute", bottom: "-2rem", right: "-2rem", background: "#F5F0E8", padding: "1.5rem 2rem", border: "1px solid #C4B49A" }}>
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "36px", fontWeight: 300, color: "#2C2820" }}>12+</p>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: "#8C7B68", marginTop: "4px" }}>Years of Practice</p>
@@ -225,14 +242,38 @@ export default function App() {
         </div>
         <div className="services-card">
           {services.map(s => (
-            <div key={s.title} className="service-card">
+            <div key={s.title} className="service-card" onClick={() => setSelectedService(s)}>
               <span className="services-icon">{s.icon}</span>
               <h3 className="services-card-name">{s.title}</h3>
               <p className="services-card-description">{s.desc}</p>
+              <span className="service-more">Learn more →</span>
             </div>
           ))}
         </div>
       </section>
+
+      {/* SERVICE MODAL */}
+      {selectedService && (
+        <div className="modal-overlay" onClick={() => setSelectedService(null)}>
+          <div className="modal" onClick={e => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setSelectedService(null)}>✕</button>
+            <span className="modal-icon">{selectedService.icon}</span>
+            <h3 className="modal-title">{selectedService.title}</h3>
+            <p className="modal-desc">{selectedService.desc}</p>
+            <ul className="modal-list">
+              {selectedService.details.map(d => (
+                <li key={d} className="modal-list-item">
+                  <span className="modal-bullet">—</span>{d}
+                </li>
+              ))}
+            </ul>
+            <button className="submit-btn" onClick={() => { setSelectedService(null); scrollTo("contact"); }}>
+              Get in Touch
+            </button>
+          </div>
+        </div>
+      )}
+
 
       {/* CONTACT */}
       <section id="contact" className="contact">
