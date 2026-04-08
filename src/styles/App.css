@@ -1,40 +1,41 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Manrope:wght@200..800&display=swap');
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+ 
 body {
   margin: 0;
   padding: 0;
   background: var(--bg-primary);
-  color: #2C2820;
+  color: var(--text-heading);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+ 
 img {
   max-width: 100%;
   display: block;
 }
-
+ 
 a {
   text-decoration: none;
   color: inherit;
 }
-
+ 
 button {
   cursor: pointer;
 }
-
+ 
 ul, ol {
   list-style: none;
 }
-
-/* Navbar */
+ 
+/* ─── Navbar ─────────────────────────────────────────────────── */
 .navbar {
   position: fixed;
   top: 0;
@@ -62,219 +63,217 @@ ul, ol {
 
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.06); */
 }
-
+ 
+.navbar-blur {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: rgba(241, 240, 237, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+ 
 .navbar-links {
   display: flex;
   gap: 2rem;
 }
-
+ 
 .nav-link {
   cursor: pointer;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-weight: var(--fw-ui);
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #6B5B47;
+  color: var(--text-body);
   transition: color 0.2s;
   border-bottom: 2px solid transparent;
 }
-
+ 
 .nav-link:hover {
-  /* color: #2C2820; */
   color: var(--primary-hover);
   border-bottom-color: var(--primary-hover);
 }
-
+ 
 .navbar-brand {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 20px;
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   letter-spacing: 0.06em;
+  color: var(--text-heading);
   cursor: pointer;
 }
-
+ 
 .navbar-brand-em {
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-weight: var(--fw-body);
   font-size: 15px;
-  color: #8C7B68;
+  color: var(--accent-gold);
 }
-
-
-/* Hero section */
+ 
+/* ─── Hero ───────────────────────────────────────────────────── */
 .hero {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-top: 50px;
-  background-color: #f1f0ed;
+  background: var(--bg-primary);
 }
-
+ 
 .hero-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 5rem 4rem 5rem 5rem;
 }
-
+ 
 .hero-image {
   position: relative;
   overflow: hidden;
 }
-
+ 
 .hero-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
+ 
 .hero-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(245, 240, 232, 0.15) 0%, transparent 40%);
+  background: linear-gradient(to right, rgba(241, 240, 237, 0.15) 0%, transparent 40%);
 }
-
+ 
 /* Animation */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
-.fade-up {
-  animation: fadeUp 0.8s ease forwards;
-}
-
-.fade-up-d1 {
-  animation-delay: 0.15s; opacity: 0;
-}
-
-.fade-up-d2 {
-  animation-delay: 0.3s; opacity: 0;
-}
-
-.fade-up-d3 {
-  animation-delay: 0.45s; opacity: 0;
-}
-
+ 
+.fade-up    { animation: fadeUp 0.8s ease forwards; }
+.fade-up-d1 { animation-delay: 0.15s; opacity: 0; }
+.fade-up-d2 { animation-delay: 0.3s;  opacity: 0; }
+.fade-up-d3 { animation-delay: 0.45s; opacity: 0; }
+ 
 /* Hero text elements */
 .hero-tagline {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
+  font-weight: var(--fw-ui);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #8C7B68;
+  color: var(--accent-gold);
   margin-bottom: 1.5rem;
 }
-
+ 
 .hero-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(52px, 5.5vw, 80px);
-  font-weight: 500;
+  font-weight: var(--fw-heading);
   line-height: 1.1;
   margin-bottom: 2rem;
   color: var(--text-heading);
 }
-
+ 
 .hero-description {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 15px;
-  font-weight: 400;
+  font-weight: var(--fw-body);
   line-height: 1.8;
   color: var(--text-body);
   max-width: 420px;
   margin-bottom: 3rem;
 }
-
+ 
 .hero-buttons {
   display: flex;
   gap: 1.5rem;
   align-items: center;
 }
-
-
-/* About section */
+ 
+/* ─── About ──────────────────────────────────────────────────── */
 .about {
   padding: 7rem 5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
   align-items: center;
-  background: #DCDBD8;
+  background: var(--bg-secondary);
 }
-
+ 
 .about-image {
   width: 100%;
   aspect-ratio: 3/4;
   object-fit: cover;
   display: block;
 }
-
+ 
 .about-subtitle {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
+  font-weight: var(--fw-ui);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #B5956A;
+  color: var(--accent-gold);
   margin-bottom: 1rem;
-  font-weight: 500;
 }
-
+ 
 .about-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(36px, 3.5vw, 52px);
-  font-weight: 500;
+  font-weight: var(--fw-heading);
   line-height: 1.2;
   margin-bottom: 2rem;
-  color: #2C2820;
+  color: var(--text-heading);
 }
-
+ 
 .about-description {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 15px;
-  font-weight: 400;
+  font-weight: var(--fw-body);
   line-height: 1.9;
-  color: #5C4E3D;
+  color: var(--text-body);
   margin-bottom: 1.5rem;
 }
-
-
-/* Projects */
+ 
+/* ─── Projects ───────────────────────────────────────────────── */
 .projects {
   padding: 7rem 5rem;
-  background: #F5F0E8;
+  background: var(--bg-primary);
 }
-
+ 
 .projects-filter {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 3rem;
 }
-
+ 
 .projects-subTitle {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
+  font-weight: var(--fw-ui);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #B5956A;
+  color: var(--accent-gold);
   margin-bottom: 0.75rem;
-  font-weight: 500;
 }
-
+ 
 .projects-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(36px, 3.5vw, 52px);
-  font-weight: 500;
-  color: #2C2820;
+  font-weight: var(--fw-heading);
+  color: var(--text-heading);
 }
-
+ 
 .projects-tiles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
-
+ 
 .proj-img {
   width: 100%;
   height: 260px;
@@ -329,306 +328,443 @@ ul, ol {
 .project-card:hover .proj-img {
   transform: scale(1.04);
 }
-
+ 
+.projects-filter-arrangement {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 560px;
+}
+ 
+/* Project cards */
+.project-card {
+  cursor: pointer;
+  overflow: hidden;
+  background: var(--bg-tertiary);
+  transition: transform 0.3s;
+}
+ 
+.project-card:hover {
+  transform: translateY(-4px);
+}
+ 
+.project-card:hover .proj-img {
+  transform: scale(1.04);
+}
+ 
 .project-tile-margin {
   padding: 1.5rem;
 }
-
+ 
 .project-tile-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5rem;
 }
-
+ 
 .project-tile-type {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 11px;
+  font-weight: var(--fw-ui);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #B5956A;
-  font-weight: 500;
+  color: var(--accent-gold);
 }
-
+ 
 .project-tile-year {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 11px;
-  color: #A8967E;
+  font-weight: var(--fw-body);
+  color: var(--text-body);
 }
-
+ 
 .project-tile-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 22px;
-  font-weight: 400;
-  color: #2C2820;
+  font-weight: var(--fw-heading);
+  color: var(--text-heading);
   margin-bottom: 0.4rem;
 }
-
+ 
 .project-tile-location {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
-  color: #8C7B68;
+  font-weight: var(--fw-body);
+  color: var(--text-body);
   margin-bottom: 0.75rem;
 }
-
+ 
 .project-tile-description {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 400;
+  font-weight: var(--fw-body);
   line-height: 1.7;
-  color: #5C4E3D;
+  color: var(--text-body);
 }
-
-
-/* Services */
+ 
+/* ─── Services ───────────────────────────────────────────────── */
 .services {
   padding: 7rem 5rem;
-  background: #560b18;
+  background: var(--primary);
 }
-
+ 
 .services-subtitle {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
+  font-weight: var(--fw-ui);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #B5956A;
+  color: var(--accent-gold);
   margin-bottom: 0.75rem;
-  font-weight: 500;
 }
-
+ 
 .services-description-margin {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 4rem;
 }
-
+ 
 .services-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(36px, 3.5vw, 52px);
-  font-weight: 500;
-  color: #F5F0E8;
+  font-weight: var(--fw-heading);
+  color: var(--on-dark-heading);
 }
-
+ 
 .services-description {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 14px;
-  font-weight: 400;
-  color: #A8967E;
+  font-weight: var(--fw-body);
+  color: var(--on-dark-body);
   max-width: 380px;
   text-align: right;
   line-height: 1.7;
 }
-
+ 
 .services-card {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  background-color: #560b18;
+  background: var(--primary);
 }
-
+ 
 .service-card {
-  background: #EAE0CE;
+  background: var(--bg-secondary);
   padding: 2rem;
-  border-top: 2px solid #560b18;
+  border-top: 2px solid var(--primary-hover);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(86, 11, 24, 0.12);
+}
+ 
 .services-icon {
   font-size: 22px;
-  color: #560b18;
+  color: var(--primary);
   display: block;
   margin-bottom: 1.25rem;
 }
-
+ 
 .services-card-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 22px;
-  font-weight: 400;
-  color: #2C2820;
+  font-weight: var(--fw-heading);
+  color: var(--text-heading);
   margin-bottom: 0.75rem;
 }
-
+ 
 .services-card-description {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 400;
+  font-weight: var(--fw-body);
   line-height: 1.8;
-  color: #5C4E3D;
+  color: var(--text-body);
 }
 
+.service-more {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #560b18;
+  transition: letter-spacing 0.2s;
+}
 
-/* Contact */
+.service-card:hover .service-more {
+  letter-spacing: 0.18em;
+}
+
+/* ─── Services card modal ───────────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 20, 16, 0.6);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modal {
+  background: #F5EFE6;
+  padding: 3rem;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+  border-top: 3px solid #560b18;
+  animation: fadeUp 0.3s ease forwards;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: #99816A;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #560b18;
+}
+
+.modal-icon {
+  font-size: 24px;
+  color: #560b18;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: #1A1410;
+  margin-bottom: 1rem;
+}
+
+.modal-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #56422E;
+  margin-bottom: 2rem;
+}
+
+.modal-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.modal-list-item {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #56422E;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.modal-bullet {
+  color: #560b18;
+  flex-shrink: 0;
+}
+
+ 
+/* ─── Contact ────────────────────────────────────────────────── */
 .contact {
   padding: 7rem 5rem;
-  background: #F5F0E8;
+  background: var(--bg-primary);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
   align-items: start;
 }
-
+ 
 .contact-label {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
+  font-weight: var(--fw-ui);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #B5956A;
+  color: var(--accent-gold);
   margin-bottom: 0.75rem;
   font-weight: 500;
 }
-
+ 
 .contact-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(36px, 3.5vw, 52px);
-  font-weight: 500;
+  font-weight: var(--fw-heading);
   line-height: 1.2;
-  color: #2C2820;
+  color: var(--text-heading);
   margin-bottom: 2rem;
 }
-
+ 
 .contact-description {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 14px;
-  font-weight: 400;
+  font-weight: var(--fw-body);
   line-height: 1.9;
-  color: #6B5B47;
+  color: var(--text-body);
   margin-bottom: 3rem;
 }
-
+ 
 .contact-info {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
-
+ 
 .contact-info-label {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 11px;
+  font-weight: var(--fw-ui);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #B5956A;
+  color: var(--accent-gold);
   margin-bottom: 4px;
   font-weight: 500;
 }
-
+ 
 .contact-info-value {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 14px;
-  color: #2C2820;
+  font-weight: var(--fw-body);
+  color: var(--text-heading);
 }
-
+ 
 /* Thank you message */
 .contact-success {
   padding: 3rem 2.5rem;
-  background: #EDE6D6;
-  border-top: 2px solid #B5956A;
+  background: var(--bg-secondary);
+  border-top: 2px solid var(--accent-gold);
   text-align: center;
 }
-
+ 
 .contact-success-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 28px;
-  font-weight: 500;
-  color: #2C2820;
+  font-weight: var(--fw-heading);
+  color: var(--text-heading);
   margin-bottom: 1rem;
 }
-
+ 
 .contact-success-message {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 14px;
-  font-weight: 400;
-  color: #6B5B47;
+  font-weight: var(--fw-body);
+  color: var(--text-body);
 }
-
-
-/* Form */
+ 
+/* ─── Form ───────────────────────────────────────────────────── */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-
+ 
 .form-label {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 11px;
+  font-weight: var(--fw-ui);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #8C7B68;
+  color: var(--text-body);
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
 }
-
+ 
 .submit-btn {
   align-self: flex-start;
 }
-
-/* Form inputs */
+ 
 input,
 textarea {
   width: 100%;
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 14px;
+  font-weight: var(--fw-body);
   padding: 12px 0;
   border: none;
-  border-bottom: 1px solid #D6C9B0;
+  border-bottom: 1px solid var(--border);
   background: transparent;
-  color: #1A1410;
+  color: var(--text-heading);
   outline: none;
   transition: border-color 0.2s;
 }
-
+ 
 input:focus,
 textarea:focus {
-  border-color: #560b18;
+  border-color: var(--primary);
 }
-
+ 
 textarea {
   resize: none;
   height: 100px;
 }
-
+ 
 ::placeholder {
-  color: #99816A;
+  color: var(--accent-gold);
+  opacity: 0.7;
 }
-
+ 
 /* Submit button */
 .submit-btn {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 13px;
+  font-weight: var(--fw-ui);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 14px 40px;
   background: var(--primary);
-  color: #F5EFE6;
+  color: var(--bg-primary);
   border: none;
   cursor: pointer;
   transition: background 0.2s;
 }
-
+ 
 .submit-btn:hover {
   background: var(--primary-hover);
 }
-
-
-/* Footer */
+ 
+/* ─── Footer ─────────────────────────────────────────────────── */
 .footer {
   padding: 2rem 5rem;
-  background: #560b18;
+  background: var(--primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
+ 
 .footer-brand {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 16px;
-  font-weight: 300;
-  color: #A8967E;
+  font-weight: var(--fw-heading);
+  color: var(--border-light);
 }
-
+ 
 .footer-copy {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
-  color: #6B5B47;
+  font-weight: var(--fw-body);
+  color: var(--on-dark-body);
 }

@@ -24,17 +24,35 @@ body {
 } */
 
 :root {
-  --primary: #560b18;
-  --primary-hover: #7a1024;
-
-  --background: #f1f0ed;
-  --card: #ffffff;
-  --border: #e2e0db;
-
-  --text-primary: #1f1f1f;
-  --text-secondary: #4a4a4a;
-  --text-muted: #7a7a7a;
-
-  --accent: #a63a4a;
-  --accent-alt: #c2a878; /* optional gold */
+  /* Brand */
+  --primary:          #560b18;
+  --primary-hover:    #7a1024;
+ 
+  /* Backgrounds — all warm, all derived from ivory */
+  --bg-primary:       #f1f0ed; /* hero, navbar, contact   */
+  --bg-secondary:     #e4e2dd; /* about, service cards    */
+  --bg-tertiary:      #d4d0c8; /* project cards           */
+ 
+  /* Text — 2 values only */
+  --text-heading:     #2c2820; /* all titles & headings   */
+  --text-body:        #5c4e3d; /* all body & descriptions */
+ 
+  /* Accent */
+  --accent-gold:      #b09060; /* labels, eyebrows, subtitles */
+ 
+  /* Borders */
+  --border:           #d4d0c8;
+  --border-light:     #e2dfd8;
+ 
+  /* On-dark — text used on --primary backgrounds */
+  --on-dark-heading:  #f1f0ed;
+  --on-dark-body:     #c9b8a8;
+ 
+  /* Typography */
+  --font-serif:       'Cormorant Garamond', serif;
+  --font-sans:        'Manrope', sans-serif;
+ 
+  --fw-heading:       600; /* Cormorant Garamond headings  */
+  --fw-body:          400; /* Manrope body copy            */
+  --fw-ui:            500; /* Manrope labels, nav, buttons */
 }
