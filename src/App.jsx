@@ -159,7 +159,7 @@ export default function App() {
       {/* ABOUT */}
       <section id="about" className="about">
         <div style={{ position: "relative" }}>
-          <img src="public/cropped_photo_sis.jpg" alt="Architect" className="about-image" />
+          <img src="https://plus.unsplash.com/premium_photo-1775446842961-c8ba3264b23a?q=80&w=1382&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Architect" className="about-image" />
           {/* <div style={{ position: "absolute", bottom: "-2rem", right: "-2rem", background: "#F5F0E8", padding: "1.5rem 2rem", border: "1px solid #C4B49A" }}>
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "36px", fontWeight: 300, color: "#2C2820" }}>12+</p>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: "#8C7B68", marginTop: "4px" }}>Years of Practice</p>
