@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/App.css";
+import "./styles/global.css"
 
 const projects = [
   {
@@ -109,6 +110,7 @@ export default function App() {
   const heroRef = useRef(null);
   const [selectedService, setSelectedService] = useState(null);
 
+
   const filtered = activeFilter === "All" ? projects : projects.filter(p => p.type === activeFilter);
 
   const handleSubmit = (e) => {
@@ -159,7 +161,7 @@ export default function App() {
       {/* ABOUT */}
       <section id="about" className="about">
         <div style={{ position: "relative" }}>
-          <img src="public/cropped_photo_sis.jpg" alt="Architect" className="about-image" />
+          <img src="/About-Photo.jpeg" alt="Architect" className="about-image" />
           {/* <div style={{ position: "absolute", bottom: "-2rem", right: "-2rem", background: "#F5F0E8", padding: "1.5rem 2rem", border: "1px solid #C4B49A" }}>
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "36px", fontWeight: 300, color: "#2C2820" }}>12+</p>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "11px", letterSpacing: "0.15em", textTransform: "uppercase", color: "#8C7B68", marginTop: "4px" }}>Years of Practice</p>
@@ -309,3 +311,5 @@ export default function App() {
     </div>
   );
 }
+
+
