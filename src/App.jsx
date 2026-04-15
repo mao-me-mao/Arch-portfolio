@@ -269,12 +269,24 @@ export default function App() {
           <h2 className="contact-title">Let's build something meaningful together</h2>
           <p className="contact-description">Whether you have a project in mind or are simply at the beginning of your journey, I welcome the conversation. Every great space starts with a question.</p>
           <div className="contact-info">
-            {[["Email", "scarlett.ravenatelier@gmail.com"], ["Studio", "Southern Leyte, Philippines"], ["Phone", "09126936662"]].map(([l, v]) => (
+            {[["Email", "scarlett.ravenatelier@gmail.com"], 
+              ["Studio", "Southern Leyte, Philippines"], 
+              ["Phone", "09126936662"]
+              ].map(([l, v]) => (
               <div key={l}>
                 <p className="contact-info-label">{l}</p>
                 <p className="contact-info-value">{v}</p>
               </div>
             ))}
+          </div>
+          {/* Social Media Icons Section */}
+          <div className="social-links">
+            <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
+              <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" className="icon"/>
+            </a>
+            <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+              <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" className="icon"/>  
+            </a>
           </div>
         </div>
         <div>
