@@ -769,3 +769,22 @@ textarea {
   color: var(--on-dark-body);
 }
 
+.social-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-hover);
+}
+
+.icon{
+  width: 24px;
+  height: 24px
+} 
