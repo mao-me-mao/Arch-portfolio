@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./styles/App.css";
 import "./styles/global.css"
 
+
 const projects = [
   {
     id: 1,
@@ -254,9 +255,6 @@ export default function App() {
                 </li>
               ))}
             </ul>
-            <button className="submit-btn" onClick={() => { setSelectedService(null); scrollTo("contact"); }}>
-              Get in Touch
-            </button>
           </div>
         </div>
       )}
@@ -281,7 +279,7 @@ export default function App() {
           </div>
           {/* Social Media Icons Section */}
           <div className="social-links">
-            <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/profile.php?id=61586463995157" target="_blank" rel="noopener noreferrer">
               <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" className="icon"/>
             </a>
             <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
