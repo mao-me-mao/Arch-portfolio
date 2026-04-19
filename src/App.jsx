@@ -114,10 +114,27 @@ export default function App() {
 
   const filtered = activeFilter === "All" ? projects : projects.filter(p => p.type === activeFilter);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const res = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({
+      access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+      subject: "New message from your portfolio",
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    }),
+  });
+
+  const data = await res.json();
+  if (data.success) {
     setSubmitted(true);
-  };
+    setFormData({ name: "", email: "", message: "" });
+  }
+};
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
