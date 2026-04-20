@@ -202,10 +202,11 @@
 
   .cs-input {
     border-right: 1px solid #56422E;
-    border-bottom: none;
   }
 
   .cs-btn {
     padding: 14px;
+    margin-top: 10px;
   }
 }
+

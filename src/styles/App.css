@@ -788,3 +788,240 @@ textarea {
   width: 24px;
   height: 24px
 } 
+
+/* ─── Hamburger Button ───────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 101;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-heading);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animate into X when open */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* Responsive website */
+
+/* ─── Responsive: Tablet (≤1024px) ──────────────────────────── */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    padding-top: 70px;
+  }
+
+  .hero-text {
+    padding: 3rem 2rem 3rem 2.5rem;
+  }
+
+  .about,
+  .contact {
+    padding: 5rem 3rem;
+    gap: 3rem;
+  }
+
+  .projects,
+  .services {
+    padding: 5rem 3rem;
+  }
+
+  .projects-tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-card {
+    grid-template-columns: 1fr
+  }
+
+  .footer {
+    padding: 2rem 3rem;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center top; 
+    width: 100%;
+  }
+}
+
+/* ─── Responsive: Mobile (≤768px) ───────────────────────────── */
+@media (max-width: 768px) {
+  /* Navbar */
+  img {
+    object-fit: cover;
+    object-position: center top;
+    width: 100%;
+  }
+  .hamburger {
+    display: flex;
+  }
+  
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(241, 240, 237, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0.5rem 0 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 0.85rem 2rem;
+    width: 100%;
+    text-align: start;
+    border-bottom: none;
+  }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 70px;
+  }
+
+  .hero-text {
+    padding: 3rem 1.5rem 2.5rem;
+    order: 2;
+  }
+
+  .hero-image {
+    order: 1;
+    height: 60vw;
+    max-height: 380px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* About */
+  .about {
+    grid-template-columns: 1fr;
+    padding: 4rem 1.5rem;
+    gap: 2.5rem;
+  }
+
+  .about-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+  }
+
+  /* Projects */
+  .projects {
+    padding: 4rem 1.5rem;
+  }
+
+  .projects-filter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .projects-filter-arrangement {
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+
+  .projects-tiles {
+    grid-template-columns: 1fr;
+  }
+
+  /* Services */
+  .services {
+    padding: 4rem 1.5rem;
+  }
+
+  .services-description-margin {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .services-description {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .services-card {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact */
+  .contact {
+    grid-template-columns: 1fr;
+    padding: 4rem 1.5rem;
+    gap: 3rem;
+  }
+
+  /* Footer */
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 2rem 1.5rem;
+  }
+
+}
+
+/* ─── Responsive: Small Mobile (≤480px) ─────────────────────── */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .about-title,
+  .projects-title,
+  .services-title,
+  .contact-title {
+    font-size: 32px;
+  }
+
+  .modal {
+    padding: 2rem 1.5rem;
+  }
+  
+}
+

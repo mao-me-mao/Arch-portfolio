@@ -147,11 +147,21 @@ export default function App() {
       {/* NAV */}
       <nav className="navbar navbar-blur">
         <span className="navbar-brand" onClick={() => scrollTo("hero")}>Raven Atlier <em className="navbar-brand-em">Architect</em></span>
-        <div className="navbar-links">
+         <button
+            className={`hamburger ${menuOpen ? "open" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+        <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
           {["about", "services", "projects", "contact"].map(s => (
-            <span key={s} className="nav-link" onClick={() => scrollTo(s)}>{s}</span>
+            <span key={s} className="nav-link" onClick={() => { scrollTo(s); setMenuOpen(false); }}>{s}</span>
           ))}
-            <span className="nav-link" onClick={() => navigate("/shop")}>shop</span>
+            <span className="nav-link" onClick={() => { navigate("/shop"); setMenuOpen(false); }}>shop</span>  
         </div>
       </nav>
 
