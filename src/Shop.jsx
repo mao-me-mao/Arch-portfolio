@@ -5,11 +5,30 @@ import "./styles/Shop.css";
 export default function ComingSoon() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
+  const [formData, setFormData] = useState({ email: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+        subject: "New message from your Shop",
+        source_page: "Shop Page",
+        form_purpose:"pre-launch email waitlist", 
+        email: formData.email,
+        note: "Email wish to be notified once shop is open",
+      }),
+    });
+
+    const data = await res.json();
+    if (data.success) {
     setSubmitted(true);
+    setFormData({email: ""});
+    }
   };
 
   return (
@@ -36,12 +55,7 @@ export default function ComingSoon() {
           </div>
         ) : (
           <form className="cs-form" onSubmit={handleSubmit}>
-            <input
-              type="email"
-              required
-              placeholder="Enter your email address"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
+            <input type="email" required placeholder="Enter your email address" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})}
               className="cs-input"
             />
             <button type="submit" className="cs-btn">Notify Me</button>
