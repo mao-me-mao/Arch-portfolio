@@ -70,7 +70,7 @@ export default function ComingSoon() {
 
       {/* Footer */}
       <div className="cs-footer">
-        <span>© 2026 Scarlett Raven Architect</span>
+        <span>© 2026 Architect Scarlett Raven</span>
       </div>
 
     </div>
