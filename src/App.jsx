@@ -342,7 +342,7 @@ export default function App() {
 
       {/* FOOTER */}
       <footer className="footer">
-        <span className="footer-brand">Scarlett Raven Architect</span>
+        <span className="footer-brand">Architect Scarlett Raven</span>
         <span className="footer-copy">© 2026 — All Rights Reserved</span>
       </footer>
     </div>
