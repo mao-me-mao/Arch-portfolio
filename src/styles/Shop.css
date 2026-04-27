@@ -94,7 +94,7 @@
   border: 1px solid #56422E;
   border-right: none;
   background: transparent;
-  color: #F5EFE6;
+  color: var(--primary);
   outline: none;
   transition: border-color 0.2s;
   width: auto;
@@ -138,7 +138,7 @@
   font-family: 'Cormorant Garamond', serif;
   font-size: 28px;
   font-weight: 300;
-  color: #F5EFE6;
+  color: var(--primary);
   margin-bottom: 0.5rem;
 }
 
