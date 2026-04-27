@@ -309,7 +309,7 @@ export default function App() {
             <a href="https://www.facebook.com/profile.php?id=61586463995157" target="_blank" rel="noopener noreferrer">
               <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" className="icon"/>
             </a>
-            <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/_raven_atelier/" target="_blank" rel="noopener noreferrer">
               <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" className="icon"/>  
             </a>
           </div>
