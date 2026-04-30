@@ -161,7 +161,8 @@ export default function App() {
           {["about", "services", "projects", "contact"].map(s => (
             <span key={s} className="nav-link" onClick={() => { scrollTo(s); setMenuOpen(false); }}>{s}</span>
           ))}
-            <span className="nav-link" onClick={() => { navigate("/shop"); setMenuOpen(false); }}>shop</span>  
+            <span className="nav-link" onClick={() => { navigate("/shop"); setMenuOpen(false); }}>shop</span>
+            <span className="nav-link" onClick={() => { navigate("/faq"); setMenuOpen(false); }}>faq</span>  
         </div>
       </nav>
 
@@ -176,8 +177,8 @@ export default function App() {
             Over a decade of designing homes, cultural spaces, and workplaces that honor local materials, climate, and community.
           </p>
           <div className="fade-up fade-up-d3 hero-buttons">
-            <button className="submit-btn" onClick={() => scrollTo("projects")}>View Work</button>
-            <span className="nav-link" onClick={() => scrollTo("contact")} style={{ fontSize: "13px" }}>Get in touch →</span>
+            <button className="submit-btn" onClick={() => scrollTo("contact")}>Get in touch</button>
+            {/* <span className="nav-link" onClick={() => scrollTo("contact")} style={{ fontSize: "13px" }}>Get in touch →</span> */}
           </div>
         </div>
         <div className="hero-image">
