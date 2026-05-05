@@ -347,6 +347,9 @@ export default function App() {
       </footer>
     </div>
   );
+  
 }
 
+
+// This is a comment
 
